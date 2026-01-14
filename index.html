@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D5JM3TBC77U7QAMHGEK0');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
     <style>
         :root {
             --primary: #2563eb;
@@ -21,594 +31,235 @@
             --shadow: rgba(0, 0, 0, 0.1);
         }
 
-```
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Noto Sans JP', sans-serif;
-        background: var(--bg-main);
-        color: var(--text-primary);
-        line-height: 1.8;
-        overflow-x: hidden;
-    }
-
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 24px;
-        position: relative;
-        z-index: 1;
-    }
-
-    /* ヘッダーセクション */
-    .hero {
-        text-align: center;
-        padding: 100px 0 80px;
-        background: linear-gradient(180deg, #f5e6d3 0%, var(--bg-main) 100%);
-        position: relative;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 20%;
-        left: 10%;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(255, 192, 203, 0.3) 0%, transparent 70%);
-        border-radius: 50%;
-        filter: blur(60px);
-    }
-
-    .hero::after {
-        content: '';
-        position: absolute;
-        top: 30%;
-        right: 10%;
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(circle, rgba(255, 192, 203, 0.25) 0%, transparent 70%);
-        border-radius: 50%;
-        filter: blur(80px);
-    }
-
-    .gift-icon {
-        width: 280px;
-        height: 280px;
-        margin: 0 auto 40px;
-        position: relative;
-        z-index: 1;
-        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
-    }
-
-    .gift-box {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    .gift-box-body {
-        width: 220px;
-        height: 220px;
-        background: #ffd700;
-        border: 8px solid #3d4852;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        overflow: hidden;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .gift-box-present {
-        width: 160px;
-        height: 160px;
-        background: repeating-linear-gradient(
-            45deg,
-            #ffd700,
-            #ffd700 10px,
-            #ffffff 10px,
-            #ffffff 20px
-        );
-        border: 6px solid #3d4852;
-        border-radius: 12px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .gift-ribbon-h {
-        width: 100%;
-        height: 40px;
-        background: #ffd700;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        border-top: 4px solid #3d4852;
-        border-bottom: 4px solid #3d4852;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .gift-ribbon-v {
-        width: 40px;
-        height: 100%;
-        background: #ffd700;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        border-left: 4px solid #3d4852;
-        border-right: 4px solid #3d4852;
-        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .gift-bow {
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 6px;
-        align-items: center;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    }
-
-    .bow-left, .bow-right {
-        width: 38px;
-        height: 38px;
-        background: #ffd700;
-        border: 5px solid #3d4852;
-        border-radius: 50%;
-    }
-
-    .bow-center {
-        width: 22px;
-        height: 22px;
-        background: #ffd700;
-        border: 4px solid #3d4852;
-    }
-
-    .hero h1 {
-        font-family: 'Noto Sans JP', sans-serif;
-        font-size: clamp(2.2rem, 6vw, 3.5rem);
-        font-weight: 900;
-        margin-bottom: 30px;
-        color: #2d3748;
-        letter-spacing: 0.1em;
-        animation: fadeInDown 0.8s ease-out;
-        position: relative;
-        z-index: 1;
-        padding: 0 60px;
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
-    }
 
-    .hero-subtitle {
-        font-size: clamp(0.9rem, 2vw, 1.2rem);
-        color: #4a5568;
-        margin-bottom: 40px;
-        font-weight: 500;
-        animation: fadeIn 0.8s ease-out 0.2s backwards;
-        letter-spacing: 0.03em;
-        position: relative;
-        z-index: 1;
-        white-space: nowrap;
-    }
-
-    .hero-subtitle::before {
-        display: none;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    /* CTAボタン */
-    .cta-button {
-        display: inline-block;
-        padding: 22px 60px;
-        background: linear-gradient(180deg, #ff6b35 0%, #ff4500 100%);
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 1.4rem;
-        font-weight: 900;
-        border-radius: 16px;
-        border: 4px solid #3d4852;
-        box-shadow: 
-            0 8px 0 #3d4852,
-            0 12px 24px rgba(255, 69, 0, 0.4);
-        transition: all 0.2s ease;
-        animation: fadeInUp 0.8s ease-out 0.4s backwards;
-        position: relative;
-        z-index: 1;
-        letter-spacing: 0.05em;
-        text-transform: none;
-    }
-
-    .cta-button::before {
-        content: '👉 ';
-        font-size: 1.2em;
-    }
-
-    .cta-button::after {
-        content: ' 👈';
-        font-size: 1.2em;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
-    .cta-button:hover {
-        background: linear-gradient(180deg, #ff7f50 0%, #ff5722 100%);
-        transform: translateY(3px);
-        box-shadow: 
-            0 5px 0 #3d4852,
-            0 9px 20px rgba(255, 69, 0, 0.4);
-    }
-
-    .cta-button:active {
-        transform: translateY(6px);
-        box-shadow: 
-            0 2px 0 #3d4852,
-            0 6px 16px rgba(255, 69, 0, 0.4);
-    }
-
-    /* セクション */
-    .section {
-        padding: 60px 0;
-    }
-
-    .section-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1.6rem, 3.5vw, 2.3rem);
-        font-weight: 700;
-        margin-bottom: 48px;
-        text-align: center;
-        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        position: relative;
-        letter-spacing: 0.02em;
-        display: inline-block;
-        width: 100%;
-        white-space: nowrap;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: var(--accent);
-        border-radius: 2px;
-    }
-
-    /* カードグリッド */
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px;
-        margin-bottom: 48px;
-    }
-
-    .card {
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 32px 28px;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        border-color: var(--primary);
-    }
-
-    .card h3 {
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin-bottom: 16px;
-        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        letter-spacing: 0.01em;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .card h3::before {
-        font-size: 1.8rem;
-        flex-shrink: 0;
-    }
-
-    .card:nth-child(1) h3::before {
-        content: '💰';
-    }
-
-    .card:nth-child(2) h3::before {
-        content: '🤝';
-    }
-
-    .card:nth-child(3) h3::before {
-        content: '❤️';
-    }
-
-    .card p {
-        color: var(--text-secondary);
-        line-height: 1.8;
-        font-size: 0.95rem;
-    }
-
-    /* 法的情報セクション */
-    .legal-section {
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 40px;
-        margin-bottom: 32px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .legal-section h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 24px;
-        color: var(--text-primary);
-    }
-
-    .legal-section ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .legal-section li {
-        color: var(--text-secondary);
-        margin-bottom: 14px;
-        padding-left: 24px;
-        position: relative;
-        line-height: 1.8;
-        font-size: 0.95rem;
-    }
-
-    .legal-section li::before {
-        content: '●';
-        position: absolute;
-        left: 4px;
-        color: var(--primary);
-        font-size: 0.7rem;
-    }
-
-    /* レスポンシブ */
-    @media (max-width: 768px) {
         .hero {
-            padding: 60px 0 50px;
+            text-align: center;
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, #f5e6d3 0%, var(--bg-main) 100%);
+            position: relative;
         }
 
-        .hero h1 {
-            padding: 0 30px;
-            font-size: 2rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 192, 203, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
         }
 
-        .hero-subtitle {
-            white-space: normal;
-            font-size: 0.95rem;
-        }
-
-        .section-title {
-            white-space: normal;
-            font-size: 1.5rem;
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 30%;
+            right: 10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(255, 192, 203, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
         }
 
         .gift-icon {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 30px;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
         }
 
         .gift-box-body {
-            width: 160px;
-            height: 160px;
-            border-width: 6px;
+            width: 220px;
+            height: 220px;
+            background: #ffd700;
+            border: 8px solid #3d4852;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .gift-box-present {
-            width: 120px;
-            height: 120px;
-            border-width: 4px;
-            background: repeating-linear-gradient(
-                45deg,
-                #ffd700,
-                #ffd700 8px,
-                #ffffff 8px,
-                #ffffff 16px
-            );
+            width: 160px;
+            height: 160px;
+            background: repeating-linear-gradient(45deg, #ffd700, #ffd700 10px, #ffffff 10px, #ffffff 20px);
+            border: 6px solid #3d4852;
+            border-radius: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .gift-ribbon-h {
-            height: 30px;
-            border-width: 3px;
-        }
-
-        .gift-ribbon-v {
-            width: 30px;
-            border-width: 3px;
-        }
-
-        .bow-left, .bow-right {
-            width: 28px;
-            height: 28px;
-            border-width: 4px;
-        }
-
-        .bow-center {
-            width: 18px;
-            height: 18px;
-            border-width: 3px;
-        }
-
+        .gift-ribbon-h { width: 100%; height: 40px; background: #ffd700; position: absolute; top: 50%; left: 0; transform: translateY(-50%); border-top: 4px solid #3d4852; border-bottom: 4px solid #3d4852; }
+        .gift-ribbon-v { width: 40px; height: 100%; background: #ffd700; position: absolute; top: 0; left: 50%; transform: translateX(-50%); border-left: 4px solid #3d4852; border-right: 4px solid #3d4852; }
+        
         .gift-bow {
-            top: -20px;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        .bow-left, .bow-right { width: 38px; height: 38px; background: #ffd700; border: 5px solid #3d4852; border-radius: 50%; }
+        .bow-center { width: 22px; height: 22px; background: #ffd700; border: 4px solid #3d4852; }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: #2d3748;
+            letter-spacing: 0.1em;
+            position: relative;
+            z-index: 1;
         }
 
-        .section {
-            padding: 50px 0;
-        }
-
-        .card-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-        }
-
-        .legal-section {
-            padding: 28px 20px;
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: #4a5568;
+            margin-bottom: 40px;
+            font-weight: 500;
         }
 
         .cta-button {
-            padding: 18px 40px;
-            font-size: 1.2rem;
+            display: inline-block;
+            padding: 22px 60px;
+            background: linear-gradient(180deg, #ff6b35 0%, #ff4500 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border-radius: 16px;
+            border: 4px solid #3d4852;
+            box-shadow: 0 8px 0 #3d4852, 0 12px 24px rgba(255, 69, 0, 0.4);
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-button::before,
-        .cta-button::after {
-            font-size: 1em;
+        .cta-button:hover {
+            transform: translateY(3px);
+            box-shadow: 0 5px 0 #3d4852, 0 9px 20px rgba(255, 69, 0, 0.4);
         }
-    }
 
-    /* スクロールアニメーション */
-    .scroll-animate {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: scrollFadeIn 0.6s ease-out forwards;
-    }
-
-    @keyframes scrollFadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        .section { padding: 60px 0; }
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+            text-align: center;
+            margin-bottom: 48px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-    }
 
-    .scroll-animate:nth-child(1) { animation-delay: 0.1s; }
-    .scroll-animate:nth-child(2) { animation-delay: 0.2s; }
-    .scroll-animate:nth-child(3) { animation-delay: 0.3s; }
-</style>
-```
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
 
+        .card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 32px 28px; }
+        .legal-section { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; margin-bottom: 32px; }
+
+        .scroll-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .cta-button { padding: 18px 40px; font-size: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- ヒーローセクション -->
         <section class="hero">
             <div class="gift-icon">
-                <div class="gift-box">
-                    <div class="gift-box-body">
-                        <div class="gift-box-present">
-                            <div class="gift-ribbon-h"></div>
-                            <div class="gift-ribbon-v"></div>
-                        </div>
-                    </div>
-                    <div class="gift-bow">
-                        <div class="bow-left"></div>
-                        <div class="bow-center"></div>
-                        <div class="bow-right"></div>
+                <div class="gift-box-body">
+                    <div class="gift-box-present">
+                        <div class="gift-ribbon-h"></div>
+                        <div class="gift-ribbon-v"></div>
                     </div>
                 </div>
+                <div class="gift-bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-center"></div>
+                    <div class="bow-right"></div>
+                </div>
             </div>
-            <h1 class="title-with-icon">プレゼント公式</h1>
+            <h1>プレゼント公式</h1>
             <p class="hero-subtitle">公式ラインを追加して賞品をゲットしよう！</p>
-            <a href="https://lin.ee/id4Ml0V" class="cta-button">今すぐ受け取る</a>
+            
+            <a href="https://lin.ee/id4Ml0V" class="cta-button" onclick="ttq.track('ClickButton')">今すぐ受け取る</a>
         </section>
 
-
-    <!-- キャンペーンの仕組み -->
-    <section class="section">
-        <h2 class="section-title">キャンペーンの仕組み</h2>
-        <div class="card-grid">
-            <div class="card scroll-animate">
-                <h3>広告収入の還元</h3>
-                <p>本キャンペーンで使用されるプラットフォームやメディアでの広告収入の一部を、賞品購入の資金として活用しています。つまり、皆さまが普段目にしている広告が、誰かの夢を叶える原資となるのです。</p>
+        <section class="section">
+            <h2 class="section-title">キャンペーンの仕組み</h2>
+            <div class="card-grid">
+                <div class="card scroll-animate">
+                    <h3>💰 広告収入の還元</h3>
+                    <p>広告収入の一部を、賞品購入の資金として活用しています。</p>
+                </div>
+                <div class="card scroll-animate">
+                    <h3>🤝 協賛企業からの支援</h3>
+                    <p>製品を特別価格で提供してくださっています。</p>
+                </div>
+                <div class="card scroll-animate">
+                    <h3>❤️ 社会貢献の一環</h3>
+                    <p>利益の一部を還元することで、皆さまに幸せをお届けしたいと考えています。</p>
+                </div>
             </div>
-            <div class="card scroll-animate">
-                <h3>協賛企業からの支援</h3>
-                <p>多くの企業が本キャンペーンの趣旨に賛同し、製品やサービスを特別価格で提供してくださっています。これにより、より多くの方に豪華な賞品をお届けすることが可能になりました。</p>
+        </section>
+
+        <section class="section">
+            <div class="legal-section">
+                <h2>【特定商取引法に基づく表記】</h2>
+                <p>・事業者名: 株式会社GIFT</p>
+                <p>・所在地: 〒141-0022 東京都品川区東五反田2-5-2</p>
             </div>
-            <div class="card scroll-animate">
-                <h3>社会貢献の一環</h3>
-                <p>私たちは、この取り組みを単なる懸賞企画ではなく、社会貢献活動の一つと位置付けています。利益の一部を還元することで、より多くの方々に幸せや希望をお届けしたいと考えています。</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- 特定商取引法 -->
-    <section class="section">
-        <div class="legal-section">
-            <h2>【特定商取引法に基づく表記・運営者情報】</h2>
-            <ul>
-                <li>・事業者名: 株式会社GIFT</li>
-                <li>・所在地: 〒141-0022 東京都品川区東五反田2-5-2 THE CASK GOTANDA</li>
-                <li>・お問い合わせ: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2450415651565d51545d4b64494b494b4d0a514f">[email&#160;protected]</a><br>
-                    ※お電話でのお問い合わせは受け付けておりません。<br>
-                    上記メールまでご連絡ください。</li>
-            </ul>
-        </div>
+    <script>
+        // スクロールアニメーションの修正完結
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
 
-        <!-- 個人情報の取り扱い -->
-        <div class="legal-section">
-            <h2>【個人情報の取り扱いについて】</h2>
-            <p style="color: var(--text-secondary); line-height: 1.9;">当サイトはお客様の個人情報を適切に保護することの重要性を認識し、法令遵守および安全な取り扱いに努めます。</p>
-            <p style="color: var(--text-secondary); line-height: 1.9; margin-top: 16px;">取得した個人情報は、お問い合わせへの対応およびサービスのご案内のみに利用し、法令に基づく場合を除き第三者への提供は行いません。</p>
-        </div>
-    </section>
-</div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // スクロールアニメーションの観察
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transfor
-
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
